@@ -21,9 +21,9 @@ void sortarray(vector<int>& nums) {
 
 int main() {
     vector<int> nums = {0,0,0,1,1,1,2,2,2,0,0,0,1,1};
-      sortarray(nums);
+     sortarray(nums);
     for(int val:nums) {
-        cout << val << "  ";
+        cout << val << "  "; 
     }
     return 0;
 }

@@ -15,14 +15,7 @@ void bubblesort(int arr[], int n) {
 
   
 }
-  void printarray (int arr[], int n) {
-        for(int i = 0; i<n; i++) {
-            cout << arr[i] << " ";
-
-        }
-        cout << endl;
-    }
-
+ 
     // selection sort
     void selectionsort(int arr[], int n) {
         for(int i=0; i<n; i++) {
@@ -50,3 +43,13 @@ void bubblesort(int arr[], int n) {
         arr[prev+1] = curr;
     }
   }
+
+  //print array
+
+   void printarray (int arr[], int n) {
+        for(int i = 0; i<n; i++) {
+            cout << arr[i] << " ";
+
+        }
+        cout << endl;
+    }
