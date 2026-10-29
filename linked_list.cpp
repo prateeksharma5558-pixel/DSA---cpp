@@ -43,6 +43,33 @@ class Node {
                 tail = newnode;
             }
         }
+
+        void pop_front() {
+            if(head == NULL) {
+                cout << "LL is empty\n";
+                return;
+            }
+            Node* temp = head;
+            head = head -> next;
+            temp -> next = NULL;
+            delete temp;
+        }
+
+        void pop_back() {
+            if(head == NULL) {
+                cout << "LL is empty\n";
+                return;
+            }
+
+            Node* temp = head;
+            while(temp->next != tail) {
+                temp = temp->next;
+            }
+            temp -> next = NULL;
+            delete tail;
+            tail = temp;
+        }
+        
           void printll() {
             Node* temp = head;
             while(temp != NULL) {
@@ -61,6 +88,8 @@ class Node {
         ll.push_front(2);
         ll.push_front(3);
         ll.push_back(4);
+        ll.pop_front();
+        ll.pop_back();
         ll.printll();
 
     }
