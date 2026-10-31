@@ -69,6 +69,27 @@ class Node {
             delete tail;
             tail = temp;
         }
+
+        void insert(int val, int pos) {
+            if(pos<0) {
+                cout << "invalid pos\n";
+                return;
+            }
+            if(pos==0) {
+                push_front(val);
+                return;
+            }
+
+            Node* temp = head;
+            for(int i=0; i<pos-1; i++) {
+                temp = temp->next;
+            }
+
+            Node* newnode = new Node(val);
+            newnode->next = temp->next;
+            temp->next = newnode;
+        }
+
         
           void printll() {
             Node* temp = head;
@@ -84,12 +105,12 @@ class Node {
     int main() {
         list ll;
 
-        ll.push_front(1);
-        ll.push_front(2);
         ll.push_front(3);
-        ll.push_back(4);
-        ll.pop_front();
-        ll.pop_back();
+        ll.push_front(2);
+        ll.push_front(1);
+        ll.insert(4,1);
+
         ll.printll();
+      
 
     }
