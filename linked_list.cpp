@@ -82,12 +82,32 @@ class Node {
 
             Node* temp = head;
             for(int i=0; i<pos-1; i++) {
+                if(temp == NULL) {
+                    cout << "invalid pos\n";
+                    return;
+                }
                 temp = temp->next;
             }
+        
+
 
             Node* newnode = new Node(val);
             newnode->next = temp->next;
             temp->next = newnode;
+        }
+
+        int search(int key) {
+            Node* temp = head;
+            int idx = 0;
+           
+            while(temp != NULL) {
+             if(temp->data == key) {
+                return idx;
+            }
+            temp = temp -> next;
+            idx++;
+            }
+            return -1;
         }
 
         
@@ -112,5 +132,6 @@ class Node {
 
         ll.printll();
       
+         cout << ll.search(2) << endl;
 
     }
