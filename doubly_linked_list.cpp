@@ -24,6 +24,7 @@ class doublylist {
         head = tail = NULL;
 
     }
+    //push back and front
     void push_front(int val) {
         Node* newNode = new Node(val);
 
@@ -55,6 +56,28 @@ class doublylist {
             tail = newNode;
         }
     }
+    //pop back and front
+
+    void pop_front() {
+    Node* temp = head;
+    head = head -> next;
+    if(head == NULL) {
+        head -> prev = NULL;
+
+    }
+    temp -> next = NULL;
+    delete temp;
+    }
+
+    void pop_back() {
+        Node* temp = tail;
+        tail = tail -> prev;
+        if(tail != NULL) {
+            tail -> next = NULL;
+        } 
+        temp -> prev = NULL;
+        delete temp;
+    }
 
 };
 
@@ -64,7 +87,7 @@ int main() {
     dll.push_back(1);
     dll.push_back(2);
     dll.push_back(3);
-
+    dll.pop_back();
     dll.print();
 
     return 0;
